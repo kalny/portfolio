@@ -37,6 +37,11 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/site/index']],
+            Yii::$app->user->isGuest ? (
+                ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/site/login']]
+            ) : (
+                ['label' => Yii::t('app', 'NAV_LOGOUT') . ' (' . Yii::$app->user->identity->username . ')', 'url' => ['/site/logout']]
+            )
         ],
     ]);
     NavBar::end();

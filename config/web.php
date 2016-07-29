@@ -12,12 +12,18 @@ $db = ArrayHelper::merge(
     require(__DIR__ . '/db-local.php')
 );
 
+$eauth = ArrayHelper::merge(
+    require(__DIR__ . '/eauth.php'),
+    require(__DIR__ . '/eauth-local.php')
+);
+
 $config = [
     'id' => 'basic',
     'language'=>'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'eauth' => $eauth,
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'CbJ_cqJt8O3g0kit-tnczGHyVsghDxRV',
@@ -62,6 +68,10 @@ $config = [
                 'app' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'forceTranslation' => true,
+                ],
+                'eauth' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@eauth/messages',
                 ],
             ],
         ],

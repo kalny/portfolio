@@ -19,6 +19,7 @@ $eauth = ArrayHelper::merge(
 
 $config = [
     'id' => 'basic',
+    'defaultRoute' => 'portfolio/view',
     'language'=>'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -60,6 +61,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login' => 'site/login',
+                'logout' => 'site/logout',
+                'id<id:[-\d]+>' => 'portfolio/view',
+                'my-portfolio' => 'portfolio/index',
+                'add-portfolio' => 'portfolio/add',
+                'edit-portfolio/id<id:[-\d]+>' => 'portfolio/edit',
             ],
         ],
 

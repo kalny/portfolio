@@ -84,6 +84,13 @@ $config = [
         ],
 
     ],
+
+    'modules' => [
+        /* other modules */
+        'markdown' => [
+            'class' => 'kartik\markdown\Module',
+        ]
+    ],
     'params' => $params,
 ];
 

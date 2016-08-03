@@ -28,5 +28,19 @@ return [
     
     'LABEL_CONTENT' => 'Content',
     
-    'LABEL_RATE' => 'Rate'
+    'LABEL_RATE' => 'Rate',
+    
+    'MESSAGE_PORTFOLIO_NOT_FOUND' => 'Portfolio not found',
+
+    'TITLE_RATING' => 'Rating',
+    'TITLE_DESCRIPTION' => 'Description',
+    'TITLE_LINKS' => 'Links',
+    'TITLE_EMAILS' => 'Emails',
+    'TITLE_PHONES' => 'Phones',
+    'TITLE_MY_WORKS' => 'My Works',
+    'LABEL_READ_MORE' => 'Read more',
+    'LABEL_REFER_TO_WORKS' => 'Refer to works',
+    'LABEL_REFER_TO_WORK' => 'Refer to work',
+    'LABEL_REFER_TO_PARAGRAPH' => 'Refer to paragraph',
+    'LABEL_LINK_WILL_OPEN_IN_A_NEW_WINDOW' => 'link will open in a new window',
 ];

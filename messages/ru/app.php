@@ -29,4 +29,18 @@ return [
     'LABEL_CONTENT' => 'Контент',
 
     'LABEL_RATE' => 'Голоса',
+
+    'MESSAGE_PORTFOLIO_NOT_FOUND' => 'Портфолио не найдено',
+
+    'TITLE_RATING' => 'Рейтинг',
+    'TITLE_DESCRIPTION' => 'Описание',
+    'TITLE_LINKS' => 'Ссылки',
+    'TITLE_EMAILS' => 'Почта',
+    'TITLE_PHONES' => 'Телефоны',
+    'TITLE_MY_WORKS' => 'Мои работы',
+    'LABEL_READ_MORE' => 'Подробнее',
+    'LABEL_REFER_TO_WORKS' => 'Ссылка на работы',
+    'LABEL_REFER_TO_WORK' => 'Ссылка на работу',
+    'LABEL_REFER_TO_PARAGRAPH' => 'Ссылка на раздел',
+    'LABEL_LINK_WILL_OPEN_IN_A_NEW_WINDOW' => 'откроется в новом окне',
 ];

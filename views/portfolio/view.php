@@ -1,9 +1,74 @@
 <?php
 /* @var $this yii\web\View */
-?>
-<h1>portfolio/view</h1>
+/* @var $portfolio app\models\Portfolio */
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+$title = $portfolio->user->username . ' (' . $portfolio->name . ')';
+$this->title = $title;
+
+?>
+<h1><?= $title ?></h1>
+
+<p><?= Yii::t('app', 'TITLE_RATING') ?>: <?= $portfolio->rating ?></p>
+
+<div class="row">
+    <div class="col-sm-6">
+        <img class="img-responsive" src="public/<?= $portfolio->avatar ?>">
+    </div>
+    <div class="col-sm-6">
+        <h3><?= Yii::t('app', 'TITLE_DESCRIPTION') ?>:</h3>
+        <p><?= $portfolio->description ?></p>
+
+        <h3><?= Yii::t('app', 'TITLE_LINKS') ?>:</h3>
+        <?php foreach ($portfolio->links as $link): ?>
+            <a href="<?= $link->url ?>" title="<?= $link->title ?>"><?= (!empty($link->anchor)) ? $link->anchor : $link->url ?></a>
+            <?= $link->description ?><br>
+        <?php endforeach; ?>
+
+        <h3><?= Yii::t('app', 'TITLE_EMAILS') ?>:</h3>
+        <?php foreach ($portfolio->emails as $email): ?>
+            <a href="mailto:<?= $email->email ?>"><?= $email->email ?></a><br>
+        <?php endforeach; ?>
+
+        <h3><?= Yii::t('app', 'TITLE_PHONES') ?>:</h3>
+        <?php foreach ($portfolio->phones as $phone): ?>
+            <?= $phone->number ?><?= (!empty($phone->note)) ? ' - ' . $phone->note : NULL ?><br>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<a id="works"></a>
+<h3><?= Yii::t('app', 'TITLE_MY_WORKS') ?>:</h3>
+<div class="row">
+<?php foreach ($portfolio->works as $work): ?>
+    <div class="col-sm-3">
+        <p><img class="img-responsive" src="public/<?= (!empty($work->image)) ? $work->image : 'no-image.png' ?>"></p>
+        <p><?= $work->title ?></p>
+        <p><a data-toggle="modal" data-target="#workModalWindow" data-id="<?= $work->id ?>" href="#"><?= Yii::t('app', 'LABEL_READ_MORE') ?></a></p>
+    </div>
+<?php endforeach; ?>
+</div>
+
+<div style="text-align: right"><?= Yii::t('app', 'LABEL_REFER_TO_WORKS') ?> <a href="#works">-#-</a></div>
+
+<hr>
+<?php foreach ($portfolio->paragraphs as $paragraph): ?>
+    <a id="paragraph<?= $paragraph->id ?>"></a>
+    <?= \kartik\markdown\Markdown::convert($paragraph->content); ?>
+    <div style="text-align: right"><?= Yii::t('app', 'LABEL_REFER_TO_PARAGRAPH') ?> <a href="#paragraph<?= $paragraph->id ?>">-#-</a></div>
+    <hr>
+<?php endforeach; ?>
+
+<!-- Work Modal Window -->
+<div class="modal fade" id="workModalWindow" tabindex="-1" role="dialog" aria-labelledby="workModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="workModalLabel"></h4>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+<?php $this->registerJsFile('/js/site.js', ['depends' => \yii\web\YiiAsset::className()]); ?>

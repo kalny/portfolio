@@ -2,6 +2,9 @@
 
 namespace app\controllers;
 
+use app\models\Portfolio;
+use app\models\Work;
+use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 
 class PortfolioController extends \yii\web\Controller
@@ -39,7 +42,38 @@ class PortfolioController extends \yii\web\Controller
 
     public function actionView($id = NULL)
     {
-        return $this->render('view');
+        if ($id == NULL) {
+            //temporarily
+            $id = 32;
+        }
+        
+        $portfolio = Portfolio::findOne($id);
+
+        if (is_null($portfolio)) {
+            throw new NotFoundHttpException(\Yii::t('app', 'MESSAGE_PORTFOLIO_NOT_FOUND'));
+        }
+        
+        return $this->render('view', [
+            'portfolio' => $portfolio,
+        ]);
+    }
+
+    public function actionModalWorkView($workId)
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $work = Work::findOne($workId);
+
+        if (is_null($work)) {
+            return NULL;
+        }
+
+        return [
+            'title' => $work->title,
+            'body' => $this->renderPartial('work', [
+                'work' => $work,
+            ])
+        ];
     }
 
 }

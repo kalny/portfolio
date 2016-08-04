@@ -37,6 +37,9 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/portfolio/view']],
+            (! Yii::$app->user->isGuest ) ? (
+                ['label' => Yii::t('app', 'NAV_MY_PORTFOLIO'), 'url' => ['/portfolio/index']]
+            ) : NULL,
             Yii::$app->user->isGuest ? (
                 ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/site/login']]
             ) : (

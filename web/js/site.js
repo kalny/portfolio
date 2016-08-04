@@ -7,7 +7,7 @@ $('#workModalWindow').on('show.bs.modal', function(e){
 
 
 
-    $.get("portfolio/modal-work-view?workId=" + id, function(data){
+    $.get("/portfolio/modal-work-view?workId=" + id, function(data){
         $('#workModalWindow').find('.modal-title').html(data.title);
         $('#workModalWindow').find('.modal-body').html(data.body);
     })

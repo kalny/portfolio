@@ -4,6 +4,7 @@ return [
     'NAV_HOME' => 'Главная',
     'NAV_LOGIN' => 'Войти',
     'NAV_LOGOUT' => 'Выйти',
+    'NAV_MY_PORTFOLIO' => 'Мои портфолио',
 
     'TITLE_LOGIN' => 'Вход на сайт',
 
@@ -43,4 +44,12 @@ return [
     'LABEL_REFER_TO_WORK' => 'Ссылка на работу',
     'LABEL_REFER_TO_PARAGRAPH' => 'Ссылка на раздел',
     'LABEL_LINK_WILL_OPEN_IN_A_NEW_WINDOW' => 'откроется в новом окне',
+
+    'TITLE_MY_PORTFOLIO' => 'Мои портфолио',
+    'LABEL_VIEW' => 'Просмотр',
+    'LABEL_EDIT' => 'Редактировать',
+    'LABEL_DELETE' => 'Удалить',
+
+    'TRANS_VOTED' => 'проголосовавших',
+    'TRANS_VOTED_ONE' => 'проголосовавший',
 ];

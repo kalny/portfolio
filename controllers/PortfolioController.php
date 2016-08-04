@@ -37,7 +37,13 @@ class PortfolioController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $user_id = \Yii::$app->user->identity->id;
+
+        $portfolios = Portfolio::findAll(['user_id' => $user_id]);
+
+        return $this->render('index', [
+            'portfolios' => $portfolios,
+        ]);
     }
 
     public function actionView($id = NULL)

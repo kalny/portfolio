@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-sm-6">
-        <img class="img-responsive" src="public/<?= (!empty($work->image)) ? $work->image : 'no-image.png' ?>">
+        <img class="img-responsive" src="/public/<?= (!empty($work->image)) ? $work->image : 'no-image.png' ?>">
     </div>
     <div class="col-sm-6">
         <?= $work->description ?>

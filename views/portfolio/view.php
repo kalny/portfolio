@@ -12,7 +12,7 @@ $this->title = $title;
 
 <div class="row">
     <div class="col-sm-6">
-        <img class="img-responsive" src="public/<?= $portfolio->avatar ?>">
+        <img class="img-responsive" src="/public/<?= $portfolio->avatar ?>">
     </div>
     <div class="col-sm-6">
         <h3><?= Yii::t('app', 'TITLE_DESCRIPTION') ?>:</h3>
@@ -41,7 +41,7 @@ $this->title = $title;
 <div class="row">
 <?php foreach ($portfolio->works as $work): ?>
     <div class="col-sm-3">
-        <p><img class="img-responsive" src="public/<?= (!empty($work->image)) ? $work->image : 'no-image.png' ?>"></p>
+        <p><img class="img-responsive" src="/public/<?= (!empty($work->image)) ? $work->image : 'no-image.png' ?>"></p>
         <p><?= $work->title ?></p>
         <p><a data-toggle="modal" data-target="#workModalWindow" data-id="<?= $work->id ?>" href="#"><?= Yii::t('app', 'LABEL_READ_MORE') ?></a></p>
     </div>

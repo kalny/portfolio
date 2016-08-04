@@ -4,6 +4,7 @@ return [
     'NAV_HOME' => 'Home',
     'NAV_LOGIN' => 'Login',
     'NAV_LOGOUT' => 'Logout',
+    'NAV_MY_PORTFOLIO' => 'My portfolio',
 
     'TITLE_LOGIN' => 'Login',
     
@@ -43,4 +44,12 @@ return [
     'LABEL_REFER_TO_WORK' => 'Refer to work',
     'LABEL_REFER_TO_PARAGRAPH' => 'Refer to paragraph',
     'LABEL_LINK_WILL_OPEN_IN_A_NEW_WINDOW' => 'link will open in a new window',
+
+    'TITLE_MY_PORTFOLIO' => 'My portfolio',
+    'LABEL_VIEW' => 'View',
+    'LABEL_EDIT' => 'Edit',
+    'LABEL_DELETE' => 'Delete',
+
+    'TRANS_VOTED' => 'voted',
+    'TRANS_VOTED_ONE' => 'voted',
 ];

@@ -5,6 +5,7 @@ return [
     'NAV_LOGIN' => 'Войти',
     'NAV_LOGOUT' => 'Выйти',
     'NAV_MY_PORTFOLIO' => 'Мои портфолио',
+    'NAV_ADD_PORTFOLIO' => 'Добавить портфолио',
 
     'TITLE_LOGIN' => 'Вход на сайт',
 
@@ -54,4 +55,12 @@ return [
     'TRANS_VOTED_ONE' => 'проголосовавший',
 
     'MESSAGE_ARE_YOU_SURE_DELETE' => 'Вы уверены что хотите удалить элемент?',
+
+    'TITLE_EDIT_PORTFOLIO' => 'Редактировать портфолио',
+    'TITLE_PORTFOLIO' => 'Портфолио',
+    'BUTTON_CHANGE' => 'Изменить',
+    'BUTTON_CREATE' => 'Создать',
+    'BUTTON_EDIT' => 'Редактировать',
+
+    'TITLE_ADD_PORTFOLIO' => 'Добавить портфолио',
 ];

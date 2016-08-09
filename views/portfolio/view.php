@@ -12,30 +12,37 @@ $this->title = $title;
 
 <div class="row">
     <div class="col-sm-6">
-        <img class="img-responsive" src="/public/<?= $portfolio->avatar ?>">
+        <img class="img-responsive" src="/public/<?= (!empty($portfolio->avatar)) ? $portfolio->avatar : 'no-image.png' ?>">
     </div>
     <div class="col-sm-6">
         <h3><?= Yii::t('app', 'TITLE_DESCRIPTION') ?>:</h3>
         <p><?= $portfolio->description ?></p>
 
+        <?php if (count($portfolio->links) > 0) : ?>
         <h3><?= Yii::t('app', 'TITLE_LINKS') ?>:</h3>
         <?php foreach ($portfolio->links as $link): ?>
             <a href="<?= $link->url ?>" title="<?= $link->title ?>"><?= (!empty($link->anchor)) ? $link->anchor : $link->url ?></a>
             <?= $link->description ?><br>
         <?php endforeach; ?>
+        <?php endif; ?>
 
+        <?php if (count($portfolio->emails) > 0) : ?>
         <h3><?= Yii::t('app', 'TITLE_EMAILS') ?>:</h3>
         <?php foreach ($portfolio->emails as $email): ?>
             <a href="mailto:<?= $email->email ?>"><?= $email->email ?></a><br>
         <?php endforeach; ?>
+        <?php endif; ?>
 
+        <?php if (count($portfolio->phones) > 0) : ?>
         <h3><?= Yii::t('app', 'TITLE_PHONES') ?>:</h3>
         <?php foreach ($portfolio->phones as $phone): ?>
             <?= $phone->number ?><?= (!empty($phone->note)) ? ' - ' . $phone->note : NULL ?><br>
         <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 </div>
 
+<?php if (count($portfolio->works) > 0) : ?>
 <a id="works"></a>
 <h3><?= Yii::t('app', 'TITLE_MY_WORKS') ?>:</h3>
 <div class="row">
@@ -47,10 +54,10 @@ $this->title = $title;
     </div>
 <?php endforeach; ?>
 </div>
-
 <div style="text-align: right"><?= Yii::t('app', 'LABEL_REFER_TO_WORKS') ?> <a href="#works">-#-</a></div>
-
 <hr>
+<?php endif; ?>
+
 <?php foreach ($portfolio->paragraphs as $paragraph): ?>
     <a id="paragraph<?= $paragraph->id ?>"></a>
     <?= \kartik\markdown\Markdown::convert($paragraph->content); ?>

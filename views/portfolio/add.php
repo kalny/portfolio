@@ -1,9 +1,16 @@
 <?php
 /* @var $this yii\web\View */
-?>
-<h1>portfolio/add</h1>
+/* @var $portfolio \app\models\Portfolio */
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+$title = Yii::t('app', 'TITLE_ADD_PORTFOLIO');
+
+$this->title = $title;
+?>
+
+<h1><?= $title ?></h1>
+
+<div class="portfolio-add">
+    <?= $this->render('_form', [
+        'portfolio' => $portfolio,
+    ]) ?>
+</div>

@@ -38,6 +38,9 @@ AppAsset::register($this);
         'items' => [
             ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/portfolio/view']],
             (! Yii::$app->user->isGuest ) ? (
+            ['label' => Yii::t('app', 'NAV_ADD_PORTFOLIO'), 'url' => ['/portfolio/add']]
+            ) : '',
+            (! Yii::$app->user->isGuest ) ? (
                 ['label' => Yii::t('app', 'NAV_MY_PORTFOLIO'), 'url' => ['/portfolio/index']]
             ) : '',
             Yii::$app->user->isGuest ? (

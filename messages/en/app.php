@@ -5,6 +5,7 @@ return [
     'NAV_LOGIN' => 'Login',
     'NAV_LOGOUT' => 'Logout',
     'NAV_MY_PORTFOLIO' => 'My portfolio',
+    'NAV_ADD_PORTFOLIO' => 'Add portfolio',
 
     'TITLE_LOGIN' => 'Login',
     
@@ -54,4 +55,13 @@ return [
     'TRANS_VOTED_ONE' => 'voted',
 
     'MESSAGE_ARE_YOU_SURE_DELETE' => 'Are you sure you want to delete an item?',
+
+    'TITLE_EDIT_PORTFOLIO' => 'Edit portfolio',
+    'TITLE_PORTFOLIO' => 'Portfolio',
+    'BUTTON_CHANGE' => 'Change',
+    'BUTTON_CREATE' => 'Create',
+    'BUTTON_EDIT' => 'Edit',
+
+    'TITLE_ADD_PORTFOLIO' => 'Add portfolio',
+    
 ];

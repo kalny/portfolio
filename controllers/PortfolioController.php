@@ -34,12 +34,70 @@ class PortfolioController extends \yii\web\Controller
 
     public function actionAdd()
     {
-        return $this->render('add');
+        $user_id = \Yii::$app->user->identity->id;
+        $portfolio = new Portfolio();
+
+        if ($portfolio->load(\Yii::$app->request->post())) {
+
+            $portfolio->user_id = $user_id;
+
+            $avatarData = \Yii::$app->request->post('avatarData');
+
+            $this->saveAvatar($avatarData, $portfolio);
+            
+            if ($portfolio->save()) {
+                return $this->redirect(['index']);
+            }
+            
+        } else {
+            return $this->render('add', [
+                'portfolio' => $portfolio,
+            ]);
+        }
     }
 
     public function actionEdit($id)
     {
-        return $this->render('edit');
+        $portfolio = $this->findModel($id);
+
+        if ($portfolio->load(\Yii::$app->request->post())) {
+
+            $avatarData = \Yii::$app->request->post('avatarData');
+
+            $this->saveAvatar($avatarData, $portfolio);
+
+            if ($portfolio->save()) {
+                return $this->redirect(['index']);
+            }
+
+        } else {
+            return $this->render('edit', [
+                'portfolio' => $portfolio,
+            ]);
+        }
+    }
+
+    private function saveAvatar($avatarData, $portfolio)
+    {
+        if (!empty($avatarData)) {
+
+            if (!empty($portfolio->avatar)) {
+                $oldAvatarFile = \Yii::getAlias('@webroot') . '/public/' . $portfolio->avatar;
+                if (file_exists($oldAvatarFile)) {
+                    unlink($oldAvatarFile);
+                }
+            }
+
+            list($type, $avatarData) = explode(';', $avatarData);
+            list(, $avatarData)      = explode(',', $avatarData);
+            list(, $ext)      = explode('/', $type);
+
+            $avatarData = base64_decode($avatarData);
+            $avatarName = time() . '.' . $ext;
+            file_put_contents(\Yii::getAlias('@webroot') . '/public/' . $avatarName, $avatarData);
+
+            $portfolio->avatar = $avatarName;
+        }
     }
 
     public function actionIndex()
@@ -60,11 +118,7 @@ class PortfolioController extends \yii\web\Controller
             $id = 32;
         }
         
-        $portfolio = Portfolio::findOne($id);
-
-        if (is_null($portfolio)) {
-            throw new NotFoundHttpException(\Yii::t('app', 'MESSAGE_PORTFOLIO_NOT_FOUND'));
-        }
+        $portfolio = $this->findModel($id);
         
         return $this->render('view', [
             'portfolio' => $portfolio,
@@ -106,6 +160,26 @@ class PortfolioController extends \yii\web\Controller
         }
         
         return $portfolio->delete();
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = Portfolio::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionGetAvatar($id)
+    {
+        $portfolio = Portfolio::findOne($id);
+
+        if (is_null($portfolio)) {
+            return false;
+        }
+
+        return $portfolio->avatar;
     }
 
 }

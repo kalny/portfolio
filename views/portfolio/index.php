@@ -18,7 +18,7 @@ $this->title = $title;
 <div class="portfolio-item">
     <div class="row">
         <div class="col-sm-3">
-            <img src="/public/<?= $portfolio->avatar ?>" class="img-responsive">
+            <img class="img-responsive" src="/public/<?= (!empty($portfolio->avatar)) ? $portfolio->avatar : 'no-image.png' ?>">
         </div>
         <div class="col-sm-9">
             <div class="row">

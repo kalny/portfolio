@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "nodge/yii2-eauth": "~2.0",
         "kartik-v/yii2-markdown": "dev-master",
-        "michelf/php-smartypants": "dev-lib"
+        "michelf/php-smartypants": "dev-lib",
+        "bower-asset/bootbox": "~4.3.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

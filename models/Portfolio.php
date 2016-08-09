@@ -23,7 +23,7 @@ use Yii;
  * @property User[] $users
  * @property Work[] $works
  */
-class Portfolio extends \yii\db\ActiveRecord
+class Portfolio extends BaseModel
 {
     /**
      * @inheritdoc
@@ -124,5 +124,18 @@ class Portfolio extends \yii\db\ActiveRecord
     public function getWorks()
     {
         return $this->hasMany(Work::className(), ['portfolio_id' => 'id']);
+    }
+
+    public function delete()
+    {
+        $avatar = $this->avatar;
+        
+        $this->deleteImage($avatar);
+        
+        foreach ($this->works as $work) {
+            $work->delete();
+        }
+
+        return parent::delete();
     }
 }

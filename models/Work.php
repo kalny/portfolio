@@ -18,7 +18,7 @@ use Yii;
  * @property Portfolio $portfolio
  * @property User $user
  */
-class Work extends \yii\db\ActiveRecord
+class Work extends BaseModel
 {
     /**
      * @inheritdoc
@@ -73,5 +73,14 @@ class Work extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public function delete()
+    {
+        $image = $this->image;
+
+        $this->deleteImage($image);
+
+        return parent::delete();
     }
 }

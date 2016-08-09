@@ -6,6 +6,7 @@ use app\models\Portfolio;
 use app\models\Work;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 
 class PortfolioController extends \yii\web\Controller
 {
@@ -20,6 +21,12 @@ class PortfolioController extends \yii\web\Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
                 ],
             ],
         ];
@@ -80,6 +87,25 @@ class PortfolioController extends \yii\web\Controller
                 'work' => $work,
             ])
         ];
+    }
+
+    public function actionDelete()
+    {
+        $id = \Yii::$app->request->post('id');
+
+        $portfolio = Portfolio::findOne($id);
+
+        if (is_null($portfolio)) {
+            return false;
+        }
+
+        $user_id = \Yii::$app->user->identity->id;
+        
+        if ($portfolio->user_id !== $user_id) {
+            return false;
+        }
+        
+        return $portfolio->delete();
     }
 
 }

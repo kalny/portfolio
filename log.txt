@@ -1,0 +1,598 @@
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with nodge\eauth\Bootstrap::bootstrap()
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: debug
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\debug\Module::bootstrap()
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: gii
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\gii\Module::bootstrap()
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: my-portfolio
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\web\Application::handleRequest] Route requested: 'portfolio/index'
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\Controller::runAction] Route to run: portfolio/index
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\web\Session::open] Session started
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `user` WHERE `id`=22
+    in /var/www/html/portfolio.local/project/models/User.php:38
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=portfolio
+    in /var/www/html/portfolio.local/project/models/User.php:38
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `user`
+    in /var/www/html/portfolio.local/project/models/User.php:38
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'
+    in /var/www/html/portfolio.local/project/models/User.php:38
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\InlineAction::runWithParams] Running action: app\controllers\PortfolioController::actionIndex()
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `portfolio` WHERE `user_id`=22
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:49
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `portfolio`
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:49
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'portfolio' AND kcu.table_name = 'portfolio'
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:49
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/portfolio/index.php
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `voting` WHERE `portfolio_id`=32
+    in /var/www/html/portfolio.local/project/views/portfolio/index.php:47
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `user` WHERE `id`='22'
+    in /var/www/html/portfolio.local/project/views/portfolio/index.php:47
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `voting` WHERE `portfolio_id`=33
+    in /var/www/html/portfolio.local/project/views/portfolio/index.php:47
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `user` WHERE 0=1
+    in /var/www/html/portfolio.local/project/views/portfolio/index.php:47
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:14:59 [127.0.0.1][22][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/layouts/main.php
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:14:59 [127.0.0.1][22][-][info][application] $_COOKIE = [
+    '_csrf' => '6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9IgIVzdObhc_HTG5cAqccuzbiESU2sti\";}'
+    'PHPSESSID' => 'ahl3id70hq7qtac5751gcvk6i0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'eauth-state-facebook' => 'e0e0f4cdde174e9c4a73c6889c2ab950'
+    'eauth-token-facebook' => OAuth\OAuth2\Token\StdOAuth2Token#1
+    (
+        [*:accessToken] => 'EAANOFqJdTYYBAJ5MUjwhr328yjH2jitOw8RxfZC9xi9iWNE6DdT31ZAo7sRnTGHplWrPlflwxT21kTHL1EaWLWp2cUS7LZCsy63526g68hLZADO9me8ZA28wrmuBSZAvKg4kfkv9SChNZCwdXdEF293gRlBdHenUimzccraASM2xgZDZD'
+        [*:refreshToken] => null
+        [*:endOfLife] => 1475902085
+        [*:extraParams] => []
+    )
+    'user-facebook-1706347946302617' => [
+        'username' => 'Anton  Kalny'
+        'service_name' => 'facebook'
+        'service_id' => '1706347946302617'
+        'auth_key' => 'f547c269610a14afb99a0023ae710ade'
+    ]
+    '__id' => 22
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'portfolio.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://portfolio.local/'
+    'HTTP_COOKIE' => '_csrf=6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229IgIVzdObhc_HTG5cAqccuzbiESU2sti%22%3B%7D; PHPSESSID=ahl3id70hq7qtac5751gcvk6i0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at portfolio.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'portfolio.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'SERVER_ADMIN' => 'webmaster@portfolio.local'
+    'SCRIPT_FILENAME' => '/var/www/html/portfolio.local/public_html/index.php'
+    'REMOTE_PORT' => '35830'
+    'REDIRECT_URL' => '/my-portfolio'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/my-portfolio'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470719699.39
+    'REQUEST_TIME' => 1470719699
+]
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with nodge\eauth\Bootstrap::bootstrap()
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Module::getModule] Loading module: debug
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with yii\debug\Module::bootstrap()
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Module::getModule] Loading module: gii
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with yii\gii\Module::bootstrap()
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\web\UrlManager::parseRequest] No matching URL rules. Using default URL parsing logic.
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\web\Application::handleRequest] Route requested: 'public/bbbb'
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "public/bbbb".' in /var/www/html/portfolio.local/project/vendor/yiisoft/yii2/base/Module.php:460
+Stack trace:
+#0 /var/www/html/portfolio.local/project/vendor/yiisoft/yii2/web/Application.php(87): yii\base\Module->runAction('public/bbbb', Array)
+#1 /var/www/html/portfolio.local/project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/portfolio.local/project/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Страница не найдена.' in /var/www/html/portfolio.local/project/vendor/yiisoft/yii2/web/Application.php:99
+Stack trace:
+#0 /var/www/html/portfolio.local/project/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/portfolio.local/project/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Controller::runAction] Route to run: site/error
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Action::runWithParams] Running action: yii\web\ErrorAction::run()
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/site/error.php
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/layouts/main.php
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][yii\web\Session::open] Session started
+    in /var/www/html/portfolio.local/project/views/layouts/main.php:40
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][yii\db\Command::query] SELECT * FROM `user` WHERE `id`=22
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/views/layouts/main.php:40
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=portfolio
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/views/layouts/main.php:40
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `user`
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/views/layouts/main.php:40
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/views/layouts/main.php:40
+2016-08-09 08:14:59 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][application] $_COOKIE = [
+    '_csrf' => '6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9IgIVzdObhc_HTG5cAqccuzbiESU2sti\";}'
+    'PHPSESSID' => 'ahl3id70hq7qtac5751gcvk6i0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'eauth-state-facebook' => 'e0e0f4cdde174e9c4a73c6889c2ab950'
+    'eauth-token-facebook' => OAuth\OAuth2\Token\StdOAuth2Token#1
+    (
+        [*:accessToken] => 'EAANOFqJdTYYBAJ5MUjwhr328yjH2jitOw8RxfZC9xi9iWNE6DdT31ZAo7sRnTGHplWrPlflwxT21kTHL1EaWLWp2cUS7LZCsy63526g68hLZADO9me8ZA28wrmuBSZAvKg4kfkv9SChNZCwdXdEF293gRlBdHenUimzccraASM2xgZDZD'
+        [*:refreshToken] => null
+        [*:endOfLife] => 1475902085
+        [*:extraParams] => []
+    )
+    'user-facebook-1706347946302617' => [
+        'username' => 'Anton  Kalny'
+        'service_name' => 'facebook'
+        'service_id' => '1706347946302617'
+        'auth_key' => 'f547c269610a14afb99a0023ae710ade'
+    ]
+    '__id' => 22
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'portfolio.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://portfolio.local/my-portfolio'
+    'HTTP_COOKIE' => '_csrf=6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229IgIVzdObhc_HTG5cAqccuzbiESU2sti%22%3B%7D; PHPSESSID=ahl3id70hq7qtac5751gcvk6i0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at portfolio.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'portfolio.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'SERVER_ADMIN' => 'webmaster@portfolio.local'
+    'SCRIPT_FILENAME' => '/var/www/html/portfolio.local/public_html/index.php'
+    'REMOTE_PORT' => '35830'
+    'REDIRECT_URL' => '/public/bbbb'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/public/bbbb'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470719699.469
+    'REQUEST_TIME' => 1470719699
+]
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with nodge\eauth\Bootstrap::bootstrap()
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: debug
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\debug\Module::bootstrap()
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: gii
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\gii\Module::bootstrap()
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\web\UrlManager::parseRequest] No matching URL rules. Using default URL parsing logic.
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\web\Application::handleRequest] Route requested: 'portfolio/delete'
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\Controller::runAction] Route to run: portfolio/delete
+2016-08-09 08:15:02 [127.0.0.1][22][-][trace][yii\base\InlineAction::runWithParams] Running action: app\controllers\PortfolioController::actionDelete()
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `portfolio`
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:96
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=localhost;dbname=portfolio
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:96
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'portfolio' AND kcu.table_name = 'portfolio'
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:96
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `portfolio` WHERE `id`='33'
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:96
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\web\Session::open] Session started
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:102
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT * FROM `user` WHERE `id`=22
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:102
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `user`
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:102
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'
+    in /var/www/html/portfolio.local/project/models/User.php:38
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:102
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][application] bbbb
+    in /var/www/html/portfolio.local/project/models/Portfolio.php:133
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:108
+2016-08-09 08:15:02 [127.0.0.1][22][-][info][application] $_POST = [
+    'id' => '33'
+]
+
+$_COOKIE = [
+    '_csrf' => '6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9IgIVzdObhc_HTG5cAqccuzbiESU2sti\";}'
+    'PHPSESSID' => 'ahl3id70hq7qtac5751gcvk6i0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'eauth-state-facebook' => 'e0e0f4cdde174e9c4a73c6889c2ab950'
+    'eauth-token-facebook' => OAuth\OAuth2\Token\StdOAuth2Token#1
+    (
+        [*:accessToken] => 'EAANOFqJdTYYBAJ5MUjwhr328yjH2jitOw8RxfZC9xi9iWNE6DdT31ZAo7sRnTGHplWrPlflwxT21kTHL1EaWLWp2cUS7LZCsy63526g68hLZADO9me8ZA28wrmuBSZAvKg4kfkv9SChNZCwdXdEF293gRlBdHenUimzccraASM2xgZDZD'
+        [*:refreshToken] => null
+        [*:endOfLife] => 1475902085
+        [*:extraParams] => []
+    )
+    'user-facebook-1706347946302617' => [
+        'username' => 'Anton  Kalny'
+        'service_name' => 'facebook'
+        'service_id' => '1706347946302617'
+        'auth_key' => 'f547c269610a14afb99a0023ae710ade'
+    ]
+    '__id' => 22
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'portfolio.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'aUsxYk9xeE5QAlYrGQscAQsjUj0HJT97CgpAASwEAiwADmI3fQIMJw=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://portfolio.local/my-portfolio'
+    'CONTENT_LENGTH' => '5'
+    'HTTP_COOKIE' => '_csrf=6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229IgIVzdObhc_HTG5cAqccuzbiESU2sti%22%3B%7D; PHPSESSID=ahl3id70hq7qtac5751gcvk6i0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at portfolio.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'portfolio.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'SERVER_ADMIN' => 'webmaster@portfolio.local'
+    'SCRIPT_FILENAME' => '/var/www/html/portfolio.local/public_html/index.php'
+    'REMOTE_PORT' => '35832'
+    'REDIRECT_URL' => '/portfolio/delete'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/portfolio/delete'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470719702.185
+    'REQUEST_TIME' => 1470719702
+]
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with nodge\eauth\Bootstrap::bootstrap()
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: debug
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\debug\Module::bootstrap()
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: gii
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\gii\Module::bootstrap()
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: my-portfolio
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\web\Application::handleRequest] Route requested: 'portfolio/index'
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\Controller::runAction] Route to run: portfolio/index
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\InlineAction::runWithParams] Running action: app\controllers\PortfolioController::actionIndex()
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/portfolio/index.php
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:16:01 [127.0.0.1][22][-][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/layouts/main.php
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:53
+2016-08-09 08:16:01 [127.0.0.1][22][-][info][application] $_COOKIE = [
+    '_csrf' => '6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9IgIVzdObhc_HTG5cAqccuzbiESU2sti\";}'
+    'PHPSESSID' => 'ahl3id70hq7qtac5751gcvk6i0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'eauth-state-facebook' => 'e0e0f4cdde174e9c4a73c6889c2ab950'
+    'eauth-token-facebook' => OAuth\OAuth2\Token\StdOAuth2Token#1
+    (
+        [*:accessToken] => 'EAANOFqJdTYYBAJ5MUjwhr328yjH2jitOw8RxfZC9xi9iWNE6DdT31ZAo7sRnTGHplWrPlflwxT21kTHL1EaWLWp2cUS7LZCsy63526g68hLZADO9me8ZA28wrmuBSZAvKg4kfkv9SChNZCwdXdEF293gRlBdHenUimzccraASM2xgZDZD'
+        [*:refreshToken] => null
+        [*:endOfLife] => 1475902085
+        [*:extraParams] => []
+    )
+    'user-facebook-1706347946302617' => [
+        'username' => 'Anton  Kalny'
+        'service_name' => 'facebook'
+        'service_id' => '1706347946302617'
+        'auth_key' => 'f547c269610a14afb99a0023ae710ade'
+    ]
+    '__id' => 22
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'portfolio.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://portfolio.local/'
+    'HTTP_COOKIE' => '_csrf=6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229IgIVzdObhc_HTG5cAqccuzbiESU2sti%22%3B%7D; PHPSESSID=ahl3id70hq7qtac5751gcvk6i0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at portfolio.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'portfolio.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'SERVER_ADMIN' => 'webmaster@portfolio.local'
+    'SCRIPT_FILENAME' => '/var/www/html/portfolio.local/public_html/index.php'
+    'REMOTE_PORT' => '35846'
+    'REDIRECT_URL' => '/my-portfolio'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/my-portfolio'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470719761.805
+    'REQUEST_TIME' => 1470719761
+]
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with nodge\eauth\Bootstrap::bootstrap()
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Module::getModule] Loading module: debug
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with yii\debug\Module::bootstrap()
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Module::getModule] Loading module: gii
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Application::bootstrap] Bootstrap with yii\gii\Module::bootstrap()
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\web\UrlManager::parseRequest] No matching URL rules. Using default URL parsing logic.
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\web\Application::handleRequest] Route requested: 'public/bbbb'
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Controller::runAction] Route to run: site/error
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\Action::runWithParams] Running action: yii\web\ErrorAction::run()
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/site/error.php
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][trace][yii\base\View::renderFile] Rendering view file: /var/www/html/portfolio.local/project/views/layouts/main.php
+2016-08-09 08:16:01 [127.0.0.1][22][ahl3id70hq7qtac5751gcvk6i0][info][application] $_COOKIE = [
+    '_csrf' => '6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9IgIVzdObhc_HTG5cAqccuzbiESU2sti\";}'
+    'PHPSESSID' => 'ahl3id70hq7qtac5751gcvk6i0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'eauth-state-facebook' => 'e0e0f4cdde174e9c4a73c6889c2ab950'
+    'eauth-token-facebook' => OAuth\OAuth2\Token\StdOAuth2Token#1
+    (
+        [*:accessToken] => 'EAANOFqJdTYYBAJ5MUjwhr328yjH2jitOw8RxfZC9xi9iWNE6DdT31ZAo7sRnTGHplWrPlflwxT21kTHL1EaWLWp2cUS7LZCsy63526g68hLZADO9me8ZA28wrmuBSZAvKg4kfkv9SChNZCwdXdEF293gRlBdHenUimzccraASM2xgZDZD'
+        [*:refreshToken] => null
+        [*:endOfLife] => 1475902085
+        [*:extraParams] => []
+    )
+    'user-facebook-1706347946302617' => [
+        'username' => 'Anton  Kalny'
+        'service_name' => 'facebook'
+        'service_id' => '1706347946302617'
+        'auth_key' => 'f547c269610a14afb99a0023ae710ade'
+    ]
+    '__id' => 22
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'portfolio.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://portfolio.local/my-portfolio'
+    'HTTP_COOKIE' => '_csrf=6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229IgIVzdObhc_HTG5cAqccuzbiESU2sti%22%3B%7D; PHPSESSID=ahl3id70hq7qtac5751gcvk6i0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at portfolio.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'portfolio.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'SERVER_ADMIN' => 'webmaster@portfolio.local'
+    'SCRIPT_FILENAME' => '/var/www/html/portfolio.local/public_html/index.php'
+    'REMOTE_PORT' => '35854'
+    'REDIRECT_URL' => '/public/bbbb'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/public/bbbb'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470719761.859
+    'REQUEST_TIME' => 1470719761
+]
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with nodge\eauth\Bootstrap::bootstrap()
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: debug
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\debug\Module::bootstrap()
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Module::getModule] Loading module: gii
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\gii\Module::bootstrap()
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\web\UrlManager::parseRequest] No matching URL rules. Using default URL parsing logic.
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\web\Application::handleRequest] Route requested: 'portfolio/delete'
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\Controller::runAction] Route to run: portfolio/delete
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][yii\base\InlineAction::runWithParams] Running action: app\controllers\PortfolioController::actionDelete()
+2016-08-09 08:16:05 [127.0.0.1][22][-][trace][application] bbbb
+    in /var/www/html/portfolio.local/project/models/Portfolio.php:133
+    in /var/www/html/portfolio.local/project/controllers/PortfolioController.php:108
+2016-08-09 08:16:05 [127.0.0.1][22][-][info][application] $_POST = [
+    'id' => '33'
+]
+
+$_COOKIE = [
+    '_csrf' => '6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9IgIVzdObhc_HTG5cAqccuzbiESU2sti\";}'
+    'PHPSESSID' => 'ahl3id70hq7qtac5751gcvk6i0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'eauth-state-facebook' => 'e0e0f4cdde174e9c4a73c6889c2ab950'
+    'eauth-token-facebook' => OAuth\OAuth2\Token\StdOAuth2Token#1
+    (
+        [*:accessToken] => 'EAANOFqJdTYYBAJ5MUjwhr328yjH2jitOw8RxfZC9xi9iWNE6DdT31ZAo7sRnTGHplWrPlflwxT21kTHL1EaWLWp2cUS7LZCsy63526g68hLZADO9me8ZA28wrmuBSZAvKg4kfkv9SChNZCwdXdEF293gRlBdHenUimzccraASM2xgZDZD'
+        [*:refreshToken] => null
+        [*:endOfLife] => 1475902085
+        [*:extraParams] => []
+    )
+    'user-facebook-1706347946302617' => [
+        'username' => 'Anton  Kalny'
+        'service_name' => 'facebook'
+        'service_id' => '1706347946302617'
+        'auth_key' => 'f547c269610a14afb99a0023ae710ade'
+    ]
+    '__id' => 22
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'portfolio.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'bnRWNFVGVC5XPTF9AzwwYQwcNWsdEhMbDTUnVzYzLkwHMQVhZzUgRw=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://portfolio.local/my-portfolio'
+    'CONTENT_LENGTH' => '5'
+    'HTTP_COOKIE' => '_csrf=6d67dc2baeead33bd701e774912c75e7e55b2ccb20ad4d94a0d357c1f181bec7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229IgIVzdObhc_HTG5cAqccuzbiESU2sti%22%3B%7D; PHPSESSID=ahl3id70hq7qtac5751gcvk6i0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at portfolio.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'portfolio.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/portfolio.local/public_html'
+    'SERVER_ADMIN' => 'webmaster@portfolio.local'
+    'SCRIPT_FILENAME' => '/var/www/html/portfolio.local/public_html/index.php'
+    'REMOTE_PORT' => '35850'
+    'REDIRECT_URL' => '/portfolio/delete'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/portfolio/delete'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1470719765.113
+    'REQUEST_TIME' => 1470719765
+]

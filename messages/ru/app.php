@@ -52,4 +52,6 @@ return [
 
     'TRANS_VOTED' => 'проголосовавших',
     'TRANS_VOTED_ONE' => 'проголосовавший',
+
+    'MESSAGE_ARE_YOU_SURE_DELETE' => 'Вы уверены что хотите удалить элемент?',
 ];

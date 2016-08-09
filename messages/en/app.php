@@ -52,4 +52,6 @@ return [
 
     'TRANS_VOTED' => 'voted',
     'TRANS_VOTED_ONE' => 'voted',
+
+    'MESSAGE_ARE_YOU_SURE_DELETE' => 'Are you sure you want to delete an item?',
 ];

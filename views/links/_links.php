@@ -51,4 +51,4 @@
     </div>
 </div>
 
-<?php $this->registerJsFile('/js/site.js', ['depends' => \yii\web\YiiAsset::className()]); ?>
+<?php $this->registerJsFile('/js/links.js', ['depends' => \yii\web\YiiAsset::className()]); ?>

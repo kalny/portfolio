@@ -31,7 +31,7 @@ use yii\helpers\Html;
 
     <?php ActiveForm::end(); ?>
 
-    <?= $this->render('_links', [
+    <?= $this->render('@app/views/links/_links', [
         'portfolio' => $portfolio,
         'user' => $user
     ]) ?>

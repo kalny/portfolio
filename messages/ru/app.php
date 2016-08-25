@@ -62,5 +62,16 @@ return [
     'BUTTON_CREATE' => 'Создать',
     'BUTTON_EDIT' => 'Редактировать',
 
+    'TITLE_EDIT_PORTFOLIO_IMAGE' => 'Редактировать изображение портфолио',
+    'BUTTON_SAVE' => 'Сохранить',
+    'BUTTON_CANCEL' => 'Отмена',
+
     'TITLE_ADD_PORTFOLIO' => 'Добавить портфолио',
+
+    'LABEL_LINKS' => 'Ссылки',
+    'LABEL_ADD_LINK' => 'Добавить ссылку',
+    'BUTTON_ADD_LINK' => 'Добавить ссылку',
+
+    'TITLE_EDIT_LINK' => 'Редактировать ссылку',
+    'TITLE_ADD_LINK' => 'Добавить ссылку',
 ];

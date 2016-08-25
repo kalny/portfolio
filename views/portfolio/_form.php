@@ -5,12 +5,13 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $portfolio \app\models\Portfolio */
+/* @var $user \app\models\User */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="post-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id' => 'portfolio_form']); ?>
 
     <?= $form->field($portfolio, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -28,12 +29,19 @@ use yii\helpers\Html;
                 <?= Yii::t('app', 'BUTTON_CHANGE') ?></a></p>
     </div>
 
+    <?php ActiveForm::end(); ?>
+
+    <?= $this->render('_links', [
+        'portfolio' => $portfolio,
+        'user' => $user
+    ]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($portfolio->isNewRecord ? Yii::t('app', 'BUTTON_CREATE') : Yii::t('app', 'BUTTON_EDIT'),
-            ['class' => $portfolio->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat']) ?>
+            ['class' => $portfolio->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat',
+            'form' => 'portfolio_form']) ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
 </div>
 
 <!-- Change Avatar Modal Window -->

@@ -138,4 +138,21 @@ class Portfolio extends BaseModel
 
         return parent::delete();
     }
+
+    public function save($runValidation = true, $attributeNames = null)
+    {
+        if (parent::save($runValidation, $attributeNames)) {
+            $links = Link::findAll([
+                'user_id' => $this->user_id,
+                'portfolio_id' => NULL
+            ]);
+
+            foreach ($links as $link) {
+                $link->portfolio_id = $this->id;
+                $link->save();
+            }
+            return true;
+        }
+        return false;
+    }
 }

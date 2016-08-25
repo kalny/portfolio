@@ -62,6 +62,17 @@ return [
     'BUTTON_CREATE' => 'Create',
     'BUTTON_EDIT' => 'Edit',
 
+    'TITLE_EDIT_PORTFOLIO_IMAGE' => 'Edit portfolio image',
+    'BUTTON_SAVE' => 'Save',
+    'BUTTON_CANCEL' => 'Cancel',
+
     'TITLE_ADD_PORTFOLIO' => 'Add portfolio',
+    
+    'LABEL_LINKS' => 'Links',
+    'LABEL_ADD_LINK' => 'Add link',
+    'BUTTON_ADD_LINK' => 'Add link',
+
+    'TITLE_EDIT_LINK' => 'Edit link',
+    'TITLE_ADD_LINK' => 'Add link',
     
 ];

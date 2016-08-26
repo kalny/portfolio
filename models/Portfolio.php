@@ -147,6 +147,8 @@ class Portfolio extends BaseModel
 
             $this->refreshEmails();
 
+            $this->refreshPhones();
+
             return true;
         }
         return false;
@@ -175,6 +177,19 @@ class Portfolio extends BaseModel
         foreach ($emails as $email) {
             $email->portfolio_id = $this->id;
             $email->save();
+        }
+    }
+
+    private function refreshPhones()
+    {
+        $phones = Phone::findAll([
+            'user_id' => $this->user_id,
+            'portfolio_id' => NULL
+        ]);
+
+        foreach ($phones as $phone) {
+            $phone->portfolio_id = $this->id;
+            $phone->save();
         }
     }
 }

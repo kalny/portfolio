@@ -3,102 +3,39 @@
 namespace app\controllers;
 
 use app\models\Email;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 use yii\helpers\Html;
 
-class EmailsController extends \yii\web\Controller
+class EmailsController extends ItemController
 {
-    public function behaviors()
+    protected function getResults($model)
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['modal-email-add', 'modal-email-edit', 'delete-email'],
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete-email' => ['post'],
-                ],
-            ],
+            'email' => Html::a($model->email, "mailto:" . $model->email),
         ];
     }
 
-    public function actionModalEmailEdit($itemId)
+    protected function findModel($id)
     {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-
-        $email = Email::findOne($itemId);
-
-        if ($email->load(\Yii::$app->request->post()) && $email->save()) {
-            return [
-                'result' => true, 
-                'id' => $email->id,
-                'email' => Html::a($email->email, "mailto:" . $email->email),
-            ];
-        }
-
-        if (is_null($email)) {
-            return NULL;
-        }
-
-        return [
-            'body' => $this->renderPartial('_email_form', [
-                'email' => $email,
-            ])
-        ];
+        return Email::findOne($id);
     }
 
-    public function actionModalEmailAdd($userId, $portfolioId)
+    protected function createModel()
     {
-
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-
-        $email = new Email();
-        
-        if ($email->load(\Yii::$app->request->post())) {
-            $email->user_id = $userId;
-            $email->portfolio_id = $portfolioId;
-            if ($email->save()) {
-                return [
-                    'result' => true,
-                    'item_line' => $this->renderPartial('_email_line', [
-                        'email' => $email,
-                    ])
-                ];
-            }
-        }
-
-        return [
-            'body' => $this->renderPartial('_email_form', [
-                'email' => $email,
-            ])
-        ];
+        return new Email();
     }
 
-    public function actionDeleteEmail()
+    protected function getFormViewName()
     {
-        $id = \Yii::$app->request->post('id');
+        return '_email_form';
+    }
 
-        $email = Email::findOne($id);
+    protected function getItemName()
+    {
+        return 'email';
+    }
 
-        if (is_null($email)) {
-            return false;
-        }
-
-        $user_id = \Yii::$app->user->identity->id;
-
-        if ($email->user_id !== $user_id) {
-            return false;
-        }
-
-        return $email->delete();
+    protected function getLineViewName()
+    {
+        return '_email_line';
     }
 }

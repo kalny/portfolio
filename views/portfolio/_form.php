@@ -41,6 +41,11 @@ use yii\helpers\Html;
         'user' => $user
     ]) ?>
 
+    <?= $this->render('@app/views/phones/_phones', [
+        'portfolio' => $portfolio,
+        'user' => $user
+    ]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($portfolio->isNewRecord ? Yii::t('app', 'BUTTON_CREATE') : Yii::t('app', 'BUTTON_EDIT'),
             ['class' => $portfolio->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat',

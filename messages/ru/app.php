@@ -81,4 +81,11 @@ return [
 
     'TITLE_EDIT_EMAIL' => 'Редактировать почту',
     'TITLE_ADD_EMAIL' => 'Добавить почту',
+
+    'LABEL_PHONES' => 'Телефоны',
+    'LABEL_ADD_PHONE' => 'Добавить телефон',
+    'BUTTON_ADD_PHONE' => 'Добавить телефон',
+
+    'TITLE_EDIT_PHONE' => 'Редактировать телефон',
+    'TITLE_ADD_PHONE' => 'Добавить телефон',
 ];

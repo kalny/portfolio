@@ -2,41 +2,41 @@
 
 namespace app\controllers;
 
-use app\models\Link;
+use app\models\Phone;
 use yii\helpers\Html;
 
-class LinksController extends ItemController
+class PhonesController extends ItemController
 {
     protected function getResults($model)
     {
         return [
-            'url' => Html::a((!empty($model->anchor)) ? $model->anchor : $model->url, "//" . $model->url, ['title' => $model->title]),
-            'description' => $model->description,
+            'number' => $model->number,
+            'note' => $model->note,
         ];
     }
 
     protected function findModel($id)
     {
-        return Link::findOne($id);
+        return Phone::findOne($id);
     }
 
     protected function createModel()
     {
-        return new Link();
+        return new Phone();
     }
 
     protected function getFormViewName()
     {
-        return '_link_form';
+        return '_phone_form';
     }
 
     protected function getItemName()
     {
-        return 'link';
+        return 'phone';
     }
 
     protected function getLineViewName()
     {
-        return '_link_line';
+        return '_phone_line';
     }
 }

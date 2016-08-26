@@ -81,5 +81,12 @@ return [
 
     'TITLE_EDIT_EMAIL' => 'Edit email',
     'TITLE_ADD_EMAIL' => 'Add email',
+
+    'LABEL_PHONES' => 'Phones',
+    'LABEL_ADD_PHONE' => 'Add phone',
+    'BUTTON_ADD_PHONE' => 'Add phone',
+
+    'TITLE_EDIT_PHONE' => 'Edit phone',
+    'TITLE_ADD_PHONE' => 'Add phone',
     
 ];

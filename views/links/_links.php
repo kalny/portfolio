@@ -32,7 +32,7 @@
     <hr>
 </div>
 
-<!-- Work Modal Window -->
+<!-- Link Modal Window -->
 <div class="modal fade" id="linkEditModalWindow" tabindex="-1" role="dialog" aria-labelledby="linkEditModalWindow">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

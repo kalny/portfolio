@@ -36,6 +36,11 @@ use yii\helpers\Html;
         'user' => $user
     ]) ?>
 
+    <?= $this->render('@app/views/emails/_emails', [
+        'portfolio' => $portfolio,
+        'user' => $user
+    ]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($portfolio->isNewRecord ? Yii::t('app', 'BUTTON_CREATE') : Yii::t('app', 'BUTTON_EDIT'),
             ['class' => $portfolio->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat',
@@ -69,4 +74,6 @@ use yii\helpers\Html;
         </div>
     </div>
 </div>
+
 <?php $this->registerJsFile('/js/site.js', ['depends' => \yii\web\YiiAsset::className()]); ?>
+<?php $this->registerJsFile('/js/common.js', ['depends' => \yii\web\YiiAsset::className()]); ?>

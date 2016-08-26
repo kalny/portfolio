@@ -31,11 +31,11 @@ class LinksController extends \yii\web\Controller
         ];
     }
 
-    public function actionModalLinkEdit($linkId)
+    public function actionModalLinkEdit($itemId)
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
-        $link = Link::findOne($linkId);
+        $link = Link::findOne($itemId);
 
         if ($link->load(\Yii::$app->request->post()) && $link->save()) {
             return [
@@ -70,7 +70,7 @@ class LinksController extends \yii\web\Controller
             if ($link->save()) {
                 return [
                     'result' => true,
-                    'link_line' => $this->renderPartial('_link_line', [
+                    'item_line' => $this->renderPartial('_link_line', [
                         'link' => $link,
                     ])
                 ];

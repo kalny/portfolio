@@ -142,17 +142,39 @@ class Portfolio extends BaseModel
     public function save($runValidation = true, $attributeNames = null)
     {
         if (parent::save($runValidation, $attributeNames)) {
-            $links = Link::findAll([
-                'user_id' => $this->user_id,
-                'portfolio_id' => NULL
-            ]);
 
-            foreach ($links as $link) {
-                $link->portfolio_id = $this->id;
-                $link->save();
-            }
+            $this->refreshLinks();
+
+            $this->refreshEmails();
+
             return true;
         }
         return false;
+    }
+
+    private function refreshLinks()
+    {
+        $links = Link::findAll([
+            'user_id' => $this->user_id,
+            'portfolio_id' => NULL
+        ]);
+
+        foreach ($links as $link) {
+            $link->portfolio_id = $this->id;
+            $link->save();
+        }
+    }
+
+    private function refreshEmails()
+    {
+        $emails = Email::findAll([
+            'user_id' => $this->user_id,
+            'portfolio_id' => NULL
+        ]);
+
+        foreach ($emails as $email) {
+            $email->portfolio_id = $this->id;
+            $email->save();
+        }
     }
 }

@@ -74,4 +74,11 @@ return [
 
     'TITLE_EDIT_LINK' => 'Редактировать ссылку',
     'TITLE_ADD_LINK' => 'Добавить ссылку',
+
+    'LABEL_EMAILS' => 'Почта',
+    'LABEL_ADD_EMAIL' => 'Добавить почту',
+    'BUTTON_ADD_EMAIL' => 'Добавить почту',
+
+    'TITLE_EDIT_EMAIL' => 'Редактировать почту',
+    'TITLE_ADD_EMAIL' => 'Добавить почту',
 ];

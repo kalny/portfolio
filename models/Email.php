@@ -33,7 +33,7 @@ class Email extends \yii\db\ActiveRecord
         return [
             [['portfolio_id', 'user_id'], 'integer'],
             [['user_id', 'email'], 'required'],
-            [['email'], 'string', 'max' => 128],
+            [['email'], 'email'],
             [['portfolio_id'], 'exist', 'skipOnError' => true, 'targetClass' => Portfolio::className(), 'targetAttribute' => ['portfolio_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

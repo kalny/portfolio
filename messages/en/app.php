@@ -74,5 +74,12 @@ return [
 
     'TITLE_EDIT_LINK' => 'Edit link',
     'TITLE_ADD_LINK' => 'Add link',
+
+    'LABEL_EMAILS' => 'Emails',
+    'LABEL_ADD_EMAIL' => 'Add email',
+    'BUTTON_ADD_EMAIL' => 'Add email',
+
+    'TITLE_EDIT_EMAIL' => 'Edit email',
+    'TITLE_ADD_EMAIL' => 'Add email',
     
 ];

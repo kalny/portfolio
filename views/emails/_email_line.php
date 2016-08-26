@@ -1,5 +1,7 @@
 <?php
 
+use app\widgets\ActionButtons;
+
 /* @var $this yii\web\View */
 /* @var $email \app\models\Email */
 
@@ -9,22 +11,11 @@
     <td class="email-url"><a href="mailto:<?= $email->email ?>">
             <?= $email->email ?></a></td>
 
-    <td><div class="btn-group btn-group-sm" role="group">
-            <button type="button"
-                    class="btn btn-default btn-edit-link"
-                    title="<?= Yii::t('app', 'LABEL_EDIT') ?>"
-                    data-toggle="modal"
-                    data-target="#emailEditModalWindow"
-                    data-title="<?= Yii::t('app', 'TITLE_EDIT_EMAIL') ?>"
-                    data-id="<?= $email->id ?>">
-                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-            </button>
-            <button type="button"
-                    class="btn btn-default btn-delete-email"
-                    title="<?= Yii::t('app', 'LABEL_DELETE') ?>"
-                    data-msg="<?= Yii::t('app', 'MESSAGE_ARE_YOU_SURE_DELETE') ?>"
-                    data-id="<?= $email->id ?>">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </button>
-        </div></td>
+    <td><?= ActionButtons::widget([
+            'editClass' => 'btn-edit-email',
+            'modalId' => '#emailEditModalWindow',
+            'modalTitle' => Yii::t('app', 'TITLE_EDIT_EMAIL'),
+            'itemId' => $email->id,
+            'deleteClass' => 'btn-delete-email',
+        ]) ?></td>
 </tr>

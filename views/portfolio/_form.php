@@ -31,19 +31,55 @@ use yii\helpers\Html;
 
     <?php ActiveForm::end(); ?>
 
-    <?= $this->render('@app/views/links/_links', [
-        'portfolio' => $portfolio,
-        'user' => $user
+    <?= $this->render('_items', [
+        'label' => Yii::t('app', 'LABEL_LINKS'),
+        'tableClass' => 'links-table',
+        'models' => $portfolio->links,
+        'lineView' => '@app/views/links/_link_line',
+        'itemName' => 'link',
+        'addButtonClass' => 'btn-add-link',
+        'addButtonTitle' => Yii::t('app', 'LABEL_ADD_LINK'),
+        'modalId' => 'linkEditModalWindow',
+        'modalTitle' => Yii::t('app', 'TITLE_ADD_LINK'),
+        'addButtonLabel' => Yii::t('app', 'BUTTON_ADD_LINK'),
+        'formId' => 'link_form',
+        'scriptFile' => '/js/links.js',
+        'portfolioId' => $portfolio->id,
+        'userId' => $user->id
     ]) ?>
 
-    <?= $this->render('@app/views/emails/_emails', [
-        'portfolio' => $portfolio,
-        'user' => $user
+    <?= $this->render('_items', [
+        'label' => Yii::t('app', 'LABEL_EMAILS'),
+        'tableClass' => 'emails-table',
+        'models' => $portfolio->emails,
+        'lineView' => '@app/views/emails/_email_line',
+        'itemName' => 'email',
+        'addButtonClass' => 'btn-add-email',
+        'addButtonTitle' => Yii::t('app', 'LABEL_ADD_EMAIL'),
+        'modalId' => 'emailEditModalWindow',
+        'modalTitle' => Yii::t('app', 'TITLE_ADD_EMAIL'),
+        'addButtonLabel' => Yii::t('app', 'BUTTON_ADD_EMAIL'),
+        'formId' => 'email_form',
+        'scriptFile' => '/js/emails.js',
+        'portfolioId' => $portfolio->id,
+        'userId' => $user->id
     ]) ?>
 
-    <?= $this->render('@app/views/phones/_phones', [
-        'portfolio' => $portfolio,
-        'user' => $user
+    <?= $this->render('_items', [
+        'label' => Yii::t('app', 'LABEL_PHONES'),
+        'tableClass' => 'phones-table',
+        'models' => $portfolio->phones,
+        'lineView' => '@app/views/phones/_phone_line',
+        'itemName' => 'phone',
+        'addButtonClass' => 'btn-add-phone',
+        'addButtonTitle' => Yii::t('app', 'LABEL_ADD_PHONE'),
+        'modalId' => 'phoneEditModalWindow',
+        'modalTitle' => Yii::t('app', 'TITLE_ADD_PHONE'),
+        'addButtonLabel' => Yii::t('app', 'BUTTON_ADD_PHONE'),
+        'formId' => 'phone_form',
+        'scriptFile' => '/js/phones.js',
+        'portfolioId' => $portfolio->id,
+        'userId' => $user->id
     ]) ?>
 
     <div class="form-group">

@@ -1,5 +1,7 @@
 <?php
 
+use app\widgets\ActionButtons;
+
 /* @var $this yii\web\View */
 /* @var $link \app\models\Link */
 
@@ -11,22 +13,11 @@
 
     <td class="link-description"><?= $link->description ?></td>
 
-    <td><div class="btn-group btn-group-sm" role="group">
-            <button type="button"
-                    class="btn btn-default btn-edit-link"
-                    title="<?= Yii::t('app', 'LABEL_EDIT') ?>"
-                    data-toggle="modal"
-                    data-target="#linkEditModalWindow"
-                    data-title="<?= Yii::t('app', 'TITLE_EDIT_LINK') ?>"
-                    data-id="<?= $link->id ?>">
-                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-            </button>
-            <button type="button"
-                    class="btn btn-default btn-delete-link"
-                    title="<?= Yii::t('app', 'LABEL_DELETE') ?>"
-                    data-msg="<?= Yii::t('app', 'MESSAGE_ARE_YOU_SURE_DELETE') ?>"
-                    data-id="<?= $link->id ?>">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </button>
-        </div></td>
+    <td><?= ActionButtons::widget([
+            'editClass' => 'btn-edit-link',
+            'modalId' => '#linkEditModalWindow',
+            'modalTitle' => Yii::t('app', 'TITLE_EDIT_LINK'),
+            'itemId' => $link->id,
+            'deleteClass' => 'btn-delete-link',
+        ]) ?></td>
 </tr>
